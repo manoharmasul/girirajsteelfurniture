@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             try {
-                const response = await fetch(`https://localhost:7180/api/User/Validate?Otp=${otpValue}&MobileNo=${mobile}`, {
+                const response = await fetch(`https://girajsteelfurnitures.runasp.net/api/User/Validate?Otp=${otpValue}&MobileNo=${mobile}`, {
                     method: 'GET'
                 });
 
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         try {
-            const response = await fetch(`https://localhost:7180/api/User/LogIn?MobileNo=${mobile}`, {
+            const response = await fetch(`https://girajsteelfurnitures.runasp.net/api/User/LogIn?MobileNo=${mobile}`, {
                 method: 'POST'
             });
 
@@ -505,7 +505,7 @@ formbottom.addEventListener('submit', async function(event) {
     };
 console.log(payload);
     try {
-        const res = await fetch('https://localhost:7180/api/Email/send', {
+        const res = await fetch('https://girajsteelfurnitures.runasp.net/api/Email/send', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
@@ -528,4 +528,5 @@ console.log(payload);
 
 </script>
 </body>
+
 </html>
