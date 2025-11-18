@@ -1,0 +1,392 @@
+ html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+    }
+
+    /* ---------- HEADER ---------- */
+    .workshop-header {
+      position: relative;
+      background: url("images/office-594119.jpg") center/cover no-repeat;
+      color: white;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .overlay { position: absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.55); z-index:1; }
+    .header-top {
+      position: relative; z-index:2; display:flex; justify-content:space-between; align-items:center;
+      padding:20px 40px; margin-top:-140px; gap:20px;
+    }
+   /* HEADER TOP */
+.header-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between; /* Logo left, nav right */
+  align-items: center;
+  padding: 20px 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  max-width: 180px; /* Adjust size as needed */
+  height: auto;
+  object-fit: contain;
+}
+
+/* For smaller screens */
+@media (max-width: 900px) {
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo {
+    margin-bottom: 10px;
+  }
+}
+
+    .header-top h1 { margin:0; font-size:28px; font-weight:bold; font-style:italic; color:white; }
+    nav ul { display:flex; list-style:none; margin:0; padding:0; align-items:center; }
+    nav ul li a {
+      position:relative; text-decoration:none; color:#fff; font-weight:500; font-size:16px;
+      padding:6px 12px; border-radius:5px; display:inline-block;
+    }
+    nav ul li a::after {
+      content:""; position:absolute; left:0; bottom:-4px; width:0; height:5px; background:red;
+      transition:width 0.3s ease; border-radius:3px;
+    }
+    nav ul li a:hover::after { width:100%; }
+
+    /* Dropdown */
+    .dropdown { position:relative; }
+    .dropbtn { cursor:pointer; display:inline-flex; align-items:center; gap:8px; user-select:none; }
+    .dropbtn:after { content:'\25BE'; font-size:12px; margin-left:4px; opacity:0.9; }
+    .dropdown-menu {
+      position:absolute; top:calc(100% + 8px); left:0; min-width:160px; background:rgba(0,0,0,0.82);
+      border-radius:6px; padding:6px 0; box-shadow:0 8px 20px rgba(0,0,0,0.4); display:none; z-index:50;
+    }
+    .dropdown-menu li { list-style:none; }
+    .dropdown-menu li a { display:block; padding:8px 16px; color:white; text-decoration:none; font-size:15px; }
+    .dropdown-menu li a:hover { background:rgba(255,255,255,0.08); }
+    .dropdown:hover > .dropdown-menu,
+    .dropdown:focus-within > .dropdown-menu,
+    .dropdown.open > .dropdown-menu { display:block; }
+
+    /* ---------- TAGLINE ---------- */
+    .workshop-tagline { position:relative; z-index:2; text-align:center; margin-top:50px; }
+    .workshop-tagline p { font-size:20px; font-style:italic; margin-bottom:15px; color:white; }
+    .slider { height:30px; overflow:hidden; display:inline-block; }
+    .slider span {
+      display:block; height:30px; animation:slide 9s infinite; font-size:18px; font-weight:bold; color:#ffeb3b;
+    }
+    @keyframes slide {
+      0%,20% { transform:translateY(0); }
+      25%,45% { transform:translateY(-30px); }
+      50%,70% { transform:translateY(-60px); }
+      75%,95% { transform:translateY(-90px); }
+      100% { transform:translateY(0); }
+    }
+
+    /* ---------- ABOUT + VIDEO ---------- */
+    .about-video-section { padding:60px 20px; background:#fff; }
+    .about-video-container { display:flex; max-width:1200px; margin:0 auto; gap:30px; align-items:center; flex-wrap:wrap; }
+    .video-wrapper { flex:1; overflow:hidden; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
+    .video-wrapper video { width:100%; height:100%; display:block; border-radius:10px; }
+    .about-text { flex:1; }
+    .about-text h2 { font-size:28px; margin-bottom:20px; }
+    .about-text p { font-size:16px; line-height:1.6; margin-bottom:15px; }
+    .btn { padding:12px 25px; background-color:#2e2e2e; color:white; border:none; border-radius:5px; cursor:pointer; font-size:16px; margin-top:15px; }
+    .btn:hover { background-color:#444; }
+
+    /* ---------- WHY CHOOSE US ---------- */
+    .why-choose-us { padding:40px 20px; background:#fff; }
+    .why-choose-us-container { display:flex; max-width:1200px; margin:0 auto; border-radius:10px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); min-height:400px; }
+    .overlay-content-left { flex:1; background:rgba(0,0,0,0.85); color:#fff; padding:40px; display:flex; flex-direction:column; justify-content:center; }
+    .overlay-content-left h2 { font-size:36px; margin-bottom:30px; font-weight:bold; }
+    .overlay-content-left ul { list-style:none; padding-left:0; font-size:18px; }
+    .overlay-content-left ul li { margin-bottom:20px; position:relative; padding-left:25px; }
+    .overlay-content-left ul li::before { content:"✔️"; position:absolute; left:0; top:0; }
+    .why-image { flex:1; }
+    .why-image img { width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* ---------- BUSINESS SLIDER ---------- */
+    .business-slider { padding:40px 20px; background:#fff; }
+    .business-slider h2 { font-size:32px; margin-bottom:20px; text-align:center; }
+    .slider-wrapper { overflow:hidden; max-width:1200px; margin:0 auto; }
+    .slider-track { display:flex; transition:transform 1s ease; }
+    .slide {
+      flex:0 0 calc(33.33% - 20px);
+      margin-right:20px;
+      position:relative;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .slide img { width:100%; height:250px; object-fit:cover; border-radius:10px; }
+    .slide .overlay-text {
+      position:absolute; top:0; left:0; width:100%; height:100%;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(0,0,0,0.35);
+      color:#fff; font-size:20px; font-weight:bold; text-align:center; padding:10px;
+    }
+
+    /* ---------- CONTACT US ---------- */
+    .contact-us { background:url("images/headquarters-7445782.jpg") center/cover no-repeat; color:white; position:relative; padding:60px 20px; }
+    .contact-us::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1; }
+    .contact-us > div { position:relative; z-index:2; display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between; max-width:1200px; margin:0 auto; }
+    .contantus {
+      flex:0 0 35%; max-width:400px; background:rgba(255,255,255,0.1); border:3px solid red;
+      border-radius:12px; padding:30px; color:white; box-shadow:0 6px 20px rgba(0,0,0,0.3);
+    }
+    .contantus h2 { margin-top:0; font-size:26px; margin-bottom:10px; }
+    .contantus p { margin-bottom:20px; font-size:15px; }
+    .contantus form { display:flex; flex-direction:column; gap:15px; }
+    .contantus input, .contantus textarea { padding:12px; border-radius:6px; border:2px solid #ccc; font-size:16px; }
+    .contantus button { padding:14px; background-color:red; border:none; border-radius:6px; font-size:16px; font-weight:bold; cursor:pointer; color:#fff; }
+    .contantus button:hover { background-color:darkred; transform:scale(1.03); }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width:900px) {
+      .about-video-container, .why-choose-us-container, .contact-us > div { flex-direction:column; }
+      nav ul { flex-wrap:wrap; gap:15px; }
+      .header-top { flex-direction:column; gap:10px; }
+      .business-slider h2 { font-size:24px; }
+      .slide { flex:0 0 100%; margin-right:0; }
+      .slide img { height:200px; }
+    }
+    .logo{
+          width: 15%;
+  
+    margin-left: -3%;
+    }
+
+  /*manage items css start*/
+  /* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #fff;
+  margin: 3% auto;
+  padding: 30px 35px;
+  border-radius: 14px;
+  max-width: 800px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+}
+.close:hover { color: #000; }
+
+#productForm h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 26px;
+  font-weight: 700;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* FORM GRID */
+.form-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  flex: 100%;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 15px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: all 0.2s ease-in;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  outline: none;
+}
+
+button[type="submit"] {
+  margin-top: 15px;
+  padding: 14px;
+  background: linear-gradient(135deg#ffeb3b,#ffeb3b);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(135deg,#0056b3,#003d80);
+  transform: translateY(-2px);
+}
+.cancle{
+   background: linear-gradient(135deg,#0056b3,#003d80);
+  transform: translateY(-2px);
+}
+.cancle{
+   margin-top: 15px;
+  padding: 14px;
+  background: linear-gradient(135deg,#007bff,#0056b3);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.submit{
+      float: right !important;
+      width: 12%;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+  /*manage items css end*/
+  /* Ensure nav and dropdown have higher stacking order */
+nav {
+  position: relative;
+  z-index: 100;
+}
+
+/* Dropdown menu should be above everything */
+.dropdown-menu {
+  z-index: 200; /* Higher than overlay and tagline */
+}
+
+  .workshop-tagline {
+  position: relative;
+  z-index: 1; /* Lower than nav */
+}
+
+.overlay {
+  z-index: 0; /* Lowest layer */
+}
+
+/* MODAL BACKGROUND */
+.modal1 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* MODAL BOX */
+.modal1-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 25px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+/* CLOSE BUTTON */
+.close {
+  color: #888;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* INPUT FIELD */
+.modal1-content input[type="tel"] {
+  width: 90%;
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* BUTTON STYLE */
+.modal1-content button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal1-content button:hover {
+  background-color: #0056b3;
+}
+.hidden {
+  display: none;
+}
+#extraAbout {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+}
+
+#extraAbout:not(.hidden) {
+  opacity: 1;
+  max-height: 500px; /* adjust as needed */
+}
